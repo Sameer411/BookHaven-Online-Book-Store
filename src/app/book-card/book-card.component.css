@@ -1,0 +1,19 @@
+/* src/app/book-card/book-card.component.css */
+.card {
+    width: 18rem;
+    margin: 10px;
+  }
+  .card-img-top {
+    height: 400px;
+    object-fit: cover;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .btn {
+    align-self: center;
+    margin-top: 10px;
+  }
+  

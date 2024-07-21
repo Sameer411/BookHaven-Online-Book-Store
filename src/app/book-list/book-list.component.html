@@ -1,0 +1,9 @@
+<!-- src/app/book-list/book-list.component.html -->
+<div *ngFor="let category of ['Fiction', 'Mystery', 'Science Fiction']">
+    <hr>
+    <h2>{{ category }}</h2>
+    <hr>
+      <div class="card-deck">
+        <app-book-card *ngFor="let book of getBooksByCategory(category)" [book]="book"></app-book-card>
+      </div>
+    </div>

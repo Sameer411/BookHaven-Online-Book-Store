@@ -1,0 +1,139 @@
+<!-- src/app/purchase-form/purchase-form.component.html --> 
+<div class="purchase-form">
+  <h2>Purchase Books</h2>
+  <form #purchaseForm="ngForm" (ngSubmit)="onSubmit(purchaseForm)">
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <p>{{ item.title }}</p>
+      <p>{{ item.price | currency }}</p>
+    </div>
+    <div *ngIf="cartItems.length === 0">
+      <p>No items in cart.</p>
+    </div>
+
+    <div class="form-group">
+      <label for="fullName"><b>Full Name</b></label>
+      <input type="text" id="fullName" class="form-control" required name="fullName" [(ngModel)]="purchaseForm.value['fullName']">
+      <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['fullName']?.valid" class="text-danger">
+        Full Name is required.
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="email"><b>Email Address</b></label>
+      <input type="email" id="email" class="form-control" required name="email" [(ngModel)]="purchaseForm.value['email']">
+      <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['email']?.valid" class="text-danger">
+        Valid Email Address is required.
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="phone"><b>Phone Number</b></label>
+      <input type="text" id="phone" class="form-control" required name="phone" [(ngModel)]="purchaseForm.value['phone']">
+      <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['phone']?.valid" class="text-danger">
+        Phone Number is required.
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="streetAddress"><b>Street Address</b></label>
+      <input type="text" id="streetAddress" class="form-control" required name="streetAddress" [(ngModel)]="purchaseForm.value['streetAddress']">
+      <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['streetAddress']?.valid" class="text-danger">
+        Street Address is required.
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="city"><b>City</b></label>
+      <input type="text" id="city" class="form-control" required name="city" [(ngModel)]="purchaseForm.value['city']">
+      <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['city']?.valid" class="text-danger">
+        City is required.
+      </div>
+    </div>    
+
+    <div class="form-group">
+      <label for="state"><b>State/Province</b></label>
+      <input type="text" id="state" class="form-control" required name="state" [(ngModel)]="purchaseForm.value['state']">
+      <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['state']?.valid" class="text-danger">
+        State/Province is required.
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="postalCode"><b>Postal/ZIP Code</b></label>
+      <input type="text" id="postalCode" class="form-control" required name="postalCode" [(ngModel)]="purchaseForm.value['postalCode']">
+      <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['postalCode']?.valid" class="text-danger">
+        Postal/ZIP Code is required.
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="country"><b>Country</b></label>
+      <input type="text" id="country" class="form-control" required name="country" [(ngModel)]="purchaseForm.value['country']">
+      <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['country']?.valid" class="text-danger">
+        Country is required.
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="paymentMethod"><b>Payment Method</b></label>
+      <select id="paymentMethod" class="form-control" required name="paymentMethod" [(ngModel)]="purchaseForm.value['paymentMethod']">
+        <option value="creditCard">Credit/Debit Card</option>
+        <option value="paypal">PayPal</option>
+        <option value="other">Other</option>
+      </select>
+      <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['paymentMethod']?.valid" class="text-danger">
+        Payment Method is required.
+      </div>
+    </div>
+    
+
+    <div *ngIf="purchaseForm.controls['paymentMethod']?.value === 'creditCard'" class="credit-card-info">
+      <div class="form-group">
+        <label for="cardholderName"><b>Cardholder Name</b></label>
+        <input type="text" id="cardholderName" class="form-control" required name="cardholderName" [(ngModel)]="purchaseForm.value['cardholderName']">
+        <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['cardholderName']?.valid" class="text-danger">
+          Cardholder Name is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cardNumber"><b>Card Number</b></label>
+        <input type="text" id="cardNumber" class="form-control" required name="cardNumber" [(ngModel)]="purchaseForm.value['cardNumber']">
+        <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['cardNumber']?.valid" class="text-danger">
+          Card Number is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="expirationDate"><b>Expiration Date</b></label>
+        <input type="text" id="expirationDate" class="form-control" required name="expirationDate" [(ngModel)]="purchaseForm.value['expirationDate']">
+        <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['expirationDate']?.valid" class="text-danger">
+          Expiration Date is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cvv"><b>CVV</b></label>
+        <input type="text" id="cvv" class="form-control" required name="cvv" [(ngModel)]="purchaseForm.value['cvv']">
+        <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['cvv']?.valid" class="text-danger">
+          CVV is required.
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <input type="checkbox" id="terms" required name="terms" [(ngModel)]="purchaseForm.value['terms']">
+      <label for="terms"><b>Agree to Terms and Conditions</b></label>
+      <div *ngIf="purchaseForm.submitted && !purchaseForm.controls['terms']?.valid" class="text-danger">
+        You must agree to the terms and conditions.
+      </div>
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Purchase</button>
+  </form>
+</div>

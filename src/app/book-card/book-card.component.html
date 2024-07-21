@@ -1,0 +1,11 @@
+<!-- src/app/book-card/book-card.component.html -->
+<div class="card">
+    <img [src]="book.coverImageUrl" class="card-img-top" alt="{{ book.title }}">
+    <div class="card-body">
+      <h3 class="card-title"><b>{{ book.title }}</b></h3>
+      <p class="card-text">{{ book.description }}</p>
+      <p class="card-author"><b>Author:</b> {{ book.author }}</p>
+      <button (click)="addToCart(book)" class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,48 @@
+/* Basic styling for the navigation bar */
+.navbar {
+    background-color: #343a40;
+    padding: 10px 20px;
+  }
+  
+  /* Navbar brand and link styles */
+  .navbar-brand {
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    color: #ffffff;
+  }
+  
+  .nav-link:hover {
+    color: #adb5bd;
+  }
+  
+  /* Search form styles */
+  .form-inline .form-control {
+    width: 200px;
+    margin-right: 10px;
+  }
+  
+  .form-inline .btn {
+    margin-left: 5px;
+  }
+  
+  /* Cart button styles */
+  .btn-outline-primary {
+    position: relative;
+  }
+  
+  .btn-outline-primary .badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #dc3545;
+    color: #ffffff;
+  }
+  
+  .navbar-toggler-icon {
+    filter: invert(100%);
+  }
+  

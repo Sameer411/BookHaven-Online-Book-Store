@@ -1,0 +1,34 @@
+/* src/app/book-list/book-list.component.css */
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  /* Center the category title */
+.category-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Style the card deck to space the cards evenly */
+.card-deck {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* Style individual book cards */
+app-book-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Add a hover effect to book cards */
+app-book-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+h2{
+  text-align: center;
+}
